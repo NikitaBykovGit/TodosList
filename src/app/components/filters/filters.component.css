@@ -1,0 +1,13 @@
+.filter__container {
+  margin-top: 52px;
+}
+
+.filter__select {
+  width: 180px;
+  height: 32px;
+  top: 272px;
+  left: 328px;
+  border-radius: 2px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  angle: 180 deg;
+}
