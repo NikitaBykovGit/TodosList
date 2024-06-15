@@ -1,16 +1,28 @@
-<div class="todos-page__outer-container">
-  <div class="todos-page__inner-container">
-    <form class="todos-page__form">
-
+<div class="absolute border-round-md bg-white mt-3 w-9">
+  <div class="mt-7 ml-7">
+    <form>
       <h2>Создать заметку</h2>
-      <input
-      class="todos_page__input"
-      id="createTodo"
-      type="text"
-      placeholder="  Название заметки">
-      <button class="todos-page__btn">send</button>
+      <form [formGroup]="todoForm" class="flex" (submit)="createTodo()">
+        <p-floatLabel>
+          <input
+            pInputText
+            formControlName="todoTitle"
+            class="w-22rem h-3rem border-round-xs border-noround-right"
+            id="createTodo"/>
+          <label for="createTodo">Название заметки</label>
+        </p-floatLabel>
+        <button class="bg-cyan-600 border-none" type="submit">Send</button>
+      </form>
     </form>
-    <app-filters></app-filters>
-    <app-todos></app-todos>
+    <app-filters
+      (update)="changeFilter($event)"
+      [filters]="filters"
+      [activeFilter]="activeFilter$ | async">
+    </app-filters>
+    <app-todos
+      [todos]="todos$ | async"
+      (delete)="deleteTodo($event)"
+      (complete)="completeTodo($event)">
+    </app-todos>
   </div>
 </div>

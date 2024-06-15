@@ -10,6 +10,6 @@ export function createTodo(title: string) {
   return {
     id: guid(),
     title,
-    complited: false
+    completed: false
   } as Todo;
 }

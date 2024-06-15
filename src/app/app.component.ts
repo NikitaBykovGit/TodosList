@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: `
+    <div class="h-screen surface-ground">
+      <app-todos-page></app-todos-page>
+    </div>
+  `
 })
 export class AppComponent {
   title = 'TodosList';
